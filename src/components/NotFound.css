@@ -1,0 +1,136 @@
+.notfound-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 2rem;
+}
+
+.notfound-content {
+  text-align: center;
+  max-width: 500px;
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: bold;
+  color: #4ade80;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.notfound-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.notfound-content p {
+  font-size: 1.125rem;
+  color: #9ca3af;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.notfound-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.home-btn,
+.dashboard-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.home-btn {
+  background-color: #4ade80;
+  color: #1a1a1a;
+}
+
+.home-btn:hover {
+  background-color: #22c55e;
+  transform: translateY(-1px);
+}
+
+.dashboard-btn {
+  background-color: transparent;
+  color: #4ade80;
+  border: 2px solid #4ade80;
+}
+
+.dashboard-btn:hover {
+  background-color: #4ade80;
+  color: #1a1a1a;
+  transform: translateY(-1px);
+}
+
+.helpful-links {
+  border-top: 1px solid #333333;
+  padding-top: 2rem;
+}
+
+.helpful-links h3 {
+  color: #4ade80;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.helpful-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.helpful-links li {
+  margin: 0;
+}
+
+.helpful-links a {
+  color: #9ca3af;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.helpful-links a:hover {
+  color: #4ade80;
+  background-color: #2a2a2a;
+}
+
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 6rem;
+  }
+
+  .notfound-content h1 {
+    font-size: 2rem;
+  }
+
+  .notfound-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-btn,
+  .dashboard-btn {
+    width: 200px;
+  }
+
+  .helpful-links ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,262 @@
+.schedule-container {
+  min-height: 100vh;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  padding: 0;
+}
+
+.schedule-header {
+  background-color: #1a1a1a;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #404040;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-indicator {
+  width: 4px;
+  height: 24px;
+  background-color: #4CAF50;
+  border-radius: 2px;
+}
+
+.brand-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.back-button {
+  background-color: #404040;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #505050;
+  transform: translateY(-1px);
+}
+
+.job-details-section {
+  padding: 30px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 25px;
+  margin-top: 0;
+}
+
+.table-container {
+  background-color: #333333;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.job-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.job-table thead {
+  background-color: #404040;
+}
+
+.job-table th {
+  padding: 16px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #cccccc;
+  text-transform: uppercase;
+  border-bottom: 2px solid #505050;
+}
+
+.job-table th:last-child {
+  width: 60px;
+  text-align: center;
+}
+
+.job-row {
+  border-bottom: 1px solid #404040;
+  transition: background-color 0.2s ease;
+}
+
+.job-row:hover {
+  background-color: #3a3a3a;
+}
+
+.job-row:last-child {
+  border-bottom: none;
+}
+
+.job-table td {
+  padding: 18px 20px;
+  color: #e0e0e0;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.house-no {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.address {
+  color: #cccccc;
+}
+
+.booking-date {
+  color: #cccccc;
+}
+
+.service {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.milestone {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.work-packages {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.highlight-number {
+  color: #4CAF50;
+  font-weight: 700;
+}
+
+.actions {
+  text-align: center;
+  padding: 18px 10px;
+}
+
+.view-button {
+  background: none;
+  border: none;
+  color: #cccccc;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-button:hover {
+  color: #ffffff;
+  background-color: #404040;
+  transform: scale(1.1);
+}
+
+.view-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .schedule-header {
+    padding: 15px 20px;
+  }
+  
+  .job-details-section {
+    padding: 20px;
+  }
+  
+  .job-table {
+    font-size: 13px;
+  }
+  
+  .job-table th,
+  .job-table td {
+    padding: 12px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .schedule-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .brand-title {
+    font-size: 20px;
+  }
+  
+  .job-details-section {
+    padding: 15px;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .job-table {
+    min-width: 700px;
+    font-size: 12px;
+  }
+  
+  .job-table th,
+  .job-table td {
+    padding: 10px 12px;
+  }
+  
+  .job-table th {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .schedule-header {
+    padding: 12px 15px;
+  }
+  
+  .brand-title {
+    font-size: 18px;
+  }
+  
+  .job-details-section {
+    padding: 12px;
+  }
+  
+  .section-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .job-table {
+    min-width: 650px;
+  }
+  
+  .back-button {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
