@@ -1,38 +1,107 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { EyeIcon, PlusIcon, CalendarIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { EyeIcon } from '@heroicons/react/24/outline';
 
 const Schedule = () => {
   const navigate = useNavigate();
   const [jobs, setJobs] = useState([]);
-  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
 
   useEffect(() => {
-    // Load jobs from localStorage or use mock data
+    // Load jobs from localStorage or use mock data exactly matching the image
     const savedJobs = JSON.parse(localStorage.getItem('scheduledJobs') || '[]');
     
     if (savedJobs.length === 0) {
-      // Add some mock data if no jobs exist
+      // Mock data exactly matching the uploaded image
       const mockJobs = [
         {
           _id: 'job_001',
-          date: new Date().toISOString().split('T')[0],
-          time: '09:00',
-          measure: 'Passive Ventilation',
-          contractorName: 'Cray Valley - Arron Grover',
-          houseNo: '34',
-          address: 'Ellersby Road',
-          status: 'Scheduled'
+          houseNo: '345',
+          address: '123 St...',
+          bookingDate: '2025-...',
+          service: 'Passiv...',
+          milestone: '0',
+          workPackages: '0'
         },
         {
           _id: 'job_002',
-          date: new Date().toISOString().split('T')[0],
-          time: '14:30',
-          measure: 'Insulation Assessment',
-          contractorName: 'Green Energy Solutions',
-          houseNo: '12',
-          address: 'Oak Street',
-          status: 'Scheduled'
+          houseNo: '345',
+          address: '123 St...',
+          bookingDate: '2025-...',
+          service: 'Scaffol...',
+          milestone: '0',
+          workPackages: '0'
+        },
+        {
+          _id: 'job_003',
+          houseNo: '345',
+          address: '123 St...',
+          bookingDate: '2025-...',
+          service: 'Solar PV',
+          milestone: '0',
+          workPackages: '0'
+        },
+        {
+          _id: 'job_004',
+          houseNo: '34',
+          address: 'Ellers...',
+          bookingDate: '2025-...',
+          service: 'Passiv...',
+          milestone: '8',
+          workPackages: '1'
+        },
+        {
+          _id: 'job_005',
+          houseNo: '34',
+          address: 'Ellers...',
+          bookingDate: '2025-...',
+          service: 'Door ...',
+          milestone: '8',
+          workPackages: '0'
+        },
+        {
+          _id: 'job_006',
+          houseNo: '34',
+          address: 'Ellers...',
+          bookingDate: '2025-...',
+          service: 'Loft In...',
+          milestone: '8',
+          workPackages: '0'
+        },
+        {
+          _id: 'job_007',
+          houseNo: '5555',
+          address: '999 St...',
+          bookingDate: '2025-...',
+          service: 'Passiv...',
+          milestone: '8',
+          workPackages: '0'
+        },
+        {
+          _id: 'job_008',
+          houseNo: '32',
+          address: 'Elsley ...',
+          bookingDate: '2025-...',
+          service: 'Passiv...',
+          milestone: '8',
+          workPackages: '0'
+        },
+        {
+          _id: 'job_009',
+          houseNo: '32',
+          address: 'Elsley ...',
+          bookingDate: '2025-...',
+          service: 'Solar PV',
+          milestone: '8',
+          workPackages: '0'
+        },
+        {
+          _id: 'job_010',
+          houseNo: '32',
+          address: 'Elsley ...',
+          bookingDate: '2025-...',
+          service: 'Door ...',
+          milestone: '8',
+          workPackages: '0'
         }
       ];
       localStorage.setItem('scheduledJobs', JSON.stringify(mockJobs));
@@ -42,107 +111,98 @@ const Schedule = () => {
     }
   }, []);
 
-  const filteredJobs = jobs.filter(job => job.date === selectedDate);
-
   const handleViewDetails = (jobId) => {
     navigate(`/details/${jobId}`);
   };
 
-  const handleAddJob = () => {
-    navigate('/add-job');
-  };
-
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      {/* Header */}
-      <div className="bg-gray-800 border-b border-gray-700">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-6 bg-yellow-400"></div>
-              <h1 className="text-xl font-bold">PAS-AID Schedule</h1>
-            </div>
-            <button
-              onClick={handleAddJob}
-              className="flex items-center space-x-2 bg-yellow-500 hover:bg-yellow-400 text-gray-900 px-4 py-2 rounded-lg font-medium transition-colors"
-            >
-              <PlusIcon className="h-5 w-5" />
-              <span>Add Job</span>
-            </button>
-          </div>
+    <div className="min-h-screen bg-gray-900">
+      {/* Header - exactly matching the image */}
+      <div className="px-8 pt-8 pb-4">
+        <div className="flex items-center space-x-3">
+          <div className="w-1 h-7 bg-yellow-400 rounded-sm"></div>
+          <h1 className="text-2xl font-bold text-white tracking-wide">PAS-AID</h1>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        {/* Date Filter */}
-        <div className="mb-8">
-          <div className="flex items-center space-x-4">
-            <CalendarIcon className="h-5 w-5 text-gray-400" />
-            <input
-              type="date"
-              value={selectedDate}
-              onChange={(e) => setSelectedDate(e.target.value)}
-              className="bg-gray-800 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
-            />
-          </div>
-        </div>
+      {/* Horizontal line */}
+      <div className="mx-8 border-t border-gray-600"></div>
 
-        {/* Jobs List */}
-        <div className="space-y-4">
-          {filteredJobs.length === 0 ? (
-            <div className="text-center py-12">
-              <CalendarIcon className="h-12 w-12 text-gray-600 mx-auto mb-4" />
-              <p className="text-gray-400 text-lg">No jobs scheduled for this date</p>
-              <button
-                onClick={handleAddJob}
-                className="mt-4 bg-yellow-500 hover:bg-yellow-400 text-gray-900 px-6 py-2 rounded-lg font-medium transition-colors"
-              >
-                Schedule a Job
-              </button>
-            </div>
-          ) : (
-            filteredJobs.map((job) => (
-              <div
-                key={job._id}
-                className="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:bg-gray-750 transition-colors"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center space-x-4 mb-2">
-                      <div className="flex items-center space-x-2 text-yellow-400">
-                        <ClockIcon className="h-4 w-4" />
-                        <span className="font-medium">{job.time}</span>
-                      </div>
-                      <span className="px-2 py-1 bg-green-600 text-green-100 text-xs rounded-full">
-                        {job.status}
-                      </span>
-                    </div>
-                    
-                    <h3 className="text-lg font-semibold text-white mb-2">
-                      {job.measure}
-                    </h3>
-                    
-                    <div className="text-sm text-gray-300 space-y-1">
-                      <p><span className="text-gray-400">Contractor:</span> {job.contractorName}</p>
-                      <p><span className="text-gray-400">Address:</span> {job.houseNo} {job.address}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-2">
+      {/* Job Details Section */}
+      <div className="px-8 pt-6 pb-8">
+        <h2 className="text-xl font-semibold text-white mb-8 tracking-wide">Job Details</h2>
+
+        {/* Table Container */}
+        <div className="w-full">
+          <table className="w-full table-fixed">
+            {/* Table Header */}
+            <thead>
+              <tr>
+                <th className="w-20 text-left pb-4 text-xs font-bold text-white uppercase tracking-widest">
+                  HOUSE<br />NO.
+                </th>
+                <th className="w-28 text-left pb-4 text-xs font-bold text-white uppercase tracking-widest">
+                  ADDRESS
+                </th>
+                <th className="w-32 text-left pb-4 text-xs font-bold text-white uppercase tracking-widest">
+                  BOOKING<br />DATE
+                </th>
+                <th className="w-28 text-left pb-4 text-xs font-bold text-white uppercase tracking-widest">
+                  SERVICE
+                </th>
+                <th className="w-24 text-left pb-4 text-xs font-bold text-white uppercase tracking-widest">
+                  MILESTONE
+                </th>
+                <th className="w-28 text-left pb-4 text-xs font-bold text-white uppercase tracking-widest">
+                  WORK<br />PACKAGES
+                </th>
+                <th className="w-12"></th>
+              </tr>
+            </thead>
+
+            {/* Table Body */}
+            <tbody>
+              {jobs.map((job, index) => (
+                <tr key={job._id} className="group">
+                  <td className="py-3 text-white text-sm font-medium border-b border-gray-700">
+                    {job.houseNo}
+                  </td>
+                  <td className="py-3 text-white text-sm border-b border-gray-700">
+                    {job.address}
+                  </td>
+                  <td className="py-3 text-white text-sm border-b border-gray-700">
+                    {job.bookingDate}
+                  </td>
+                  <td className="py-3 text-white text-sm border-b border-gray-700">
+                    {job.service}
+                  </td>
+                  <td className="py-3 text-white text-sm border-b border-gray-700">
+                    {job.milestone}
+                  </td>
+                  <td className="py-3 text-white text-sm border-b border-gray-700">
+                    {job.workPackages}
+                  </td>
+                  <td className="py-3 border-b border-gray-700">
                     <button
                       onClick={() => handleViewDetails(job._id)}
-                      className="p-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors group"
+                      className="p-1.5 hover:bg-gray-700 rounded transition-colors"
                       title="View Details"
                     >
-                      <EyeIcon className="h-5 w-5 text-gray-300 group-hover:text-white" />
+                      <EyeIcon className="h-4 w-4 text-gray-400 hover:text-white" />
                     </button>
-                  </div>
-                </div>
-              </div>
-            ))
-          )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
+
+        {/* Empty State */}
+        {jobs.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-gray-400 text-lg">No jobs available</p>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,29 +1,149 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #111827;
+  color: #ffffff;
 }
 
-#root {
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Exact styling to match the uploaded image */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Remove any background colors from table rows */
+tbody tr {
+  background-color: transparent;
+}
+
+/* Subtle hover effect */
+tbody tr:hover {
+  background-color: rgba(55, 65, 81, 0.3);
+}
+
+/* Ensure consistent text rendering */
+th, td {
+  font-weight: inherit;
+}
+
+th {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+/* Eye icon styling */
+.eye-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.eye-icon-button:hover {
+  background-color: #374151;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6B7280;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Focus styles */
+button:focus {
+  outline: 2px solid #F59E0B;
+  outline-offset: 2px;
+}
+
+input:focus {
+  outline: 2px solid #F59E0B;
+  outline-offset: 2px;
+}
+
+textarea:focus {
+  outline: 2px solid #F59E0B;
+  outline-offset: 2px;
+}
+
+/* Ensure proper spacing and alignment */
+.table-container {
   width: 100%;
-  margin: 0 auto;
-  text-align: center;
+  overflow-x: auto;
+}
+
+/* Header styling to match image exactly */
+.schedule-header {
+  padding: 2rem 2rem 1rem 2rem;
+}
+
+.schedule-divider {
+  margin: 0 2rem;
+  border-top: 1px solid #4B5563;
+}
+
+.schedule-content {
+  padding: 1.5rem 2rem 2rem 2rem;
+}
+
+/* Typography matching the image */
+.header-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+/* Table header styling */
+.table-header {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+/* Table cell styling */
+.table-cell {
+  font-size: 0.875rem;
+  color: #ffffff;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #374151;
 }
