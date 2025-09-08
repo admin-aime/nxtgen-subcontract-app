@@ -2,13 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
-import Schedule from './components/Schedule';
-import Details from './components/Details';
-import Profile from './components/Profile';
-import Settings from './components/Settings';
-import Reports from './components/Reports';
-import NotFound from './components/NotFound';
-import './App.css';
+import Schedule from './pages/Schedule';
+import JobDetails from './pages/JobDetails';
 
 function App() {
   return (
@@ -19,11 +14,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/schedule" element={<Schedule />} />
-          <Route path="/details/:id" element={<Details />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/details/:id" element={<JobDetails />} />
         </Routes>
       </div>
     </Router>

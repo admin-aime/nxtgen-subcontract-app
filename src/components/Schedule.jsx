@@ -1,155 +1,129 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import './Schedule.css'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Schedule.css';
 
 const Schedule = () => {
-  const navigate = useNavigate()
-  
-  const [jobData] = useState([
+  const navigate = useNavigate();
+
+  const jobData = [
     {
-      id: 1,
-      houseNo: '345',
-      address: '123 St...',
-      bookingDate: '2025-...',
-      service: 'Passiv...',
-      milestone: '0',
-      workPackages: '0'
+      id: 'J001',
+      customer: 'ABC Manufacturing',
+      location: '123 Industrial Ave',
+      date: '2024-01-15',
+      time: '09:00 AM',
+      status: 'Pending',
+      priority: 'High',
+      technician: 'John Smith',
+      description: 'Routine maintenance check on industrial equipment',
+      notes: 'Customer requested early morning appointment'
     },
     {
-      id: 2,
-      houseNo: '345',
-      address: '123 St...',
-      bookingDate: '2025-...',
-      service: 'Scaffol...',
-      milestone: '0',
-      workPackages: '0'
+      id: 'J002',
+      customer: 'XYZ Corp',
+      location: '456 Business Blvd',
+      date: '2024-01-15',
+      time: '02:00 PM',
+      status: 'In Progress',
+      priority: 'Medium',
+      technician: 'Sarah Johnson',
+      description: 'Equipment repair and calibration',
+      notes: 'Parts may need to be ordered'
     },
     {
-      id: 3,
-      houseNo: '345',
-      address: '123 St...',
-      bookingDate: '2025-...',
-      service: 'Solar PV',
-      milestone: '0',
-      workPackages: '0'
+      id: 'J003',
+      customer: 'Tech Solutions Inc',
+      location: '789 Tech Park',
+      date: '2024-01-16',
+      time: '10:30 AM',
+      status: 'Completed',
+      priority: 'Low',
+      technician: 'Mike Davis',
+      description: 'Software update and system optimization',
+      notes: 'All systems running smoothly'
     },
     {
-      id: 4,
-      houseNo: '34',
-      address: 'Ellers...',
-      bookingDate: '2025-...',
-      service: 'Passiv...',
-      milestone: '8',
-      workPackages: '1'
+      id: 'J004',
+      customer: 'Global Industries',
+      location: '321 Commerce St',
+      date: '2024-01-16',
+      time: '03:45 PM',
+      status: 'Pending',
+      priority: 'High',
+      technician: 'Lisa Wilson',
+      description: 'Emergency repair request',
+      notes: 'Urgent - production line down'
     },
     {
-      id: 5,
-      houseNo: '34',
-      address: 'Ellers...',
-      bookingDate: '2025-...',
-      service: 'Door...',
-      milestone: '8',
-      workPackages: '0'
-    },
-    {
-      id: 6,
-      houseNo: '34',
-      address: 'Ellers...',
-      bookingDate: '2025-...',
-      service: 'Loft In...',
-      milestone: '8',
-      workPackages: '0'
-    },
-    {
-      id: 7,
-      houseNo: '5555',
-      address: '999 St...',
-      bookingDate: '2025-...',
-      service: 'Passiv...',
-      milestone: '8',
-      workPackages: '0'
-    },
-    {
-      id: 8,
-      houseNo: '32',
-      address: 'Elsley...',
-      bookingDate: '2025-...',
-      service: 'Passiv...',
-      milestone: '8',
-      workPackages: '0'
+      id: 'J005',
+      customer: 'Metro Services',
+      location: '654 Service Rd',
+      date: '2024-01-17',
+      time: '11:15 AM',
+      status: 'In Progress',
+      priority: 'Medium',
+      technician: 'Tom Brown',
+      description: 'Preventive maintenance schedule',
+      notes: 'Regular quarterly service'
     }
-  ])
+  ];
 
-  const handleViewDetails = (jobId) => {
-    console.log('View details for job:', jobId)
-    // Add your view details logic here
-  }
-
-  const handleBackToDashboard = () => {
-    navigate('/dashboard')
-  }
+  const handleViewDetails = (job) => {
+    navigate('/details', { state: { jobData: job } });
+  };
 
   return (
     <div className="schedule-container">
       <div className="schedule-header">
-        <div className="brand-section">
-          <div className="brand-indicator"></div>
-          <h1 className="brand-title">PAS-AID</h1>
+        <h1>Job Schedule</h1>
+        <div className="header-actions">
+          <button className="btn-primary">Add New Job</button>
+          <button className="btn-secondary">Export</button>
         </div>
-        <button onClick={handleBackToDashboard} className="back-button">
-          Back to Dashboard
-        </button>
       </div>
 
-      <div className="job-details-section">
-        <h2 className="section-title">Job Details</h2>
-        
+      <div className="schedule-content">
         <div className="table-container">
-          <table className="job-table">
+          <table className="schedule-table">
             <thead>
               <tr>
-                <th>HOUSE NO.</th>
-                <th>ADDRESS</th>
-                <th>BOOKING DATE</th>
-                <th>SERVICE</th>
-                <th>MILESTONE</th>
-                <th>WORK PACKAGES</th>
-                <th></th>
+                <th>Job ID</th>
+                <th>Customer</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Technician</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               {jobData.map((job) => (
-                <tr key={job.id} className="job-row">
-                  <td className="house-no">{job.houseNo}</td>
-                  <td className="address">{job.address}</td>
-                  <td className="booking-date">{job.bookingDate}</td>
-                  <td className="service">{job.service}</td>
-                  <td className="milestone">{job.milestone}</td>
-                  <td className="work-packages">
-                    {job.workPackages === '1' ? (
-                      <span className="highlight-number">{job.workPackages}</span>
-                    ) : (
-                      job.workPackages
-                    )}
+                <tr key={job.id}>
+                  <td>{job.id}</td>
+                  <td>{job.customer}</td>
+                  <td>{job.location}</td>
+                  <td>{job.date}</td>
+                  <td>{job.time}</td>
+                  <td>
+                    <span className={`status ${job.status.toLowerCase().replace(' ', '-')}`}>
+                      {job.status}
+                    </span>
                   </td>
-                  <td className="actions">
+                  <td>
+                    <span className={`priority ${job.priority.toLowerCase()}`}>
+                      {job.priority}
+                    </span>
+                  </td>
+                  <td>{job.technician}</td>
+                  <td>
                     <button 
-                      className="view-button"
-                      onClick={() => handleViewDetails(job.id)}
-                      aria-label="View job details"
+                      className="action-btn view-btn"
+                      onClick={() => handleViewDetails(job)}
+                      title="View Details"
                     >
-                      <svg 
-                        width="20" 
-                        height="20" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path 
-                          d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" 
-                          fill="currentColor"
-                        />
-                      </svg>
+                      👁️
                     </button>
                   </td>
                 </tr>
@@ -159,7 +133,7 @@ const Schedule = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Schedule
+export default Schedule;

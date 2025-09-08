@@ -5,39 +5,43 @@ This project uses AIME for development assistance with automatic state tracking.
 ## Current Plan and TODOs
 
 ### Plan
-## Plan for Fixing Login.css Error
+## Plan for Adding Milestone and Task Details Section
 
 ### Approach:
-The error indicates that Login.jsx is trying to import "./Login.css" but the file doesn't exist. I need to create the Login.css file with appropriate styling that matches the dark theme used throughout the application.
+Add a new section below the Service Details that includes milestone tracking, task details with name, instructions, expected hours, photo evidence, and uploaded evidence functionality matching the uploaded image design.
 
 ### TODOs:
-[ ] Create Login.css file with dark theme styling
-[ ] Ensure styling matches the existing application design
-[ ] Test that the import error is resolved
+[ ] Add milestone section with expandable functionality
+[ ] Create task details form with task name field
+[ ] Add task instruction textarea with numbered instructions
+[ ] Add expected hours input field
+[ ] Create photo evidence section with camera icon
+[ ] Add uploaded evidence section with file upload capability
+[ ] Style all components to match the dark theme design
+[ ] Integrate with existing form state management
 
 ### TODOs
-[X] Update Login component handleLogin function
-[X] Change redirect from '/dashboard' to '/schedule'
-[X] Test the redirect functionality
-[X] Add schedule route to App.jsx
-[X] Create Schedule component with dark theme
-[X] Implement job details table with proper columns
-[X] Add sample data matching the image content
-[X] Style the table to match the dark theme design
-[X] Add view/details functionality with eye icons
-[X] Ensure responsive design for the table
-[X] Add navigation link from dashboard
-[ ] Review current App.jsx router configuration
-[ ] Create Profile page component
-[ ] Create Settings page component
-[ ] Create Reports page component
-[ ] Create NotFound (404) page component
-[ ] Update App.jsx with new routes
-[ ] Add navigation links where appropriate
-[ ] Test all new routes
-[ ] Create Login.css file with dark theme styling
-[ ] Ensure styling matches the existing application design
-[ ] Test that the import error is resolved
+[X] Set up new React project with Vite
+[X] Create login page component with form fields
+[X] Implement form validation and state management
+[X] Add responsive CSS styling for the login page
+[X] Set up routing to handle login page as main view
+[X] Test login form functionality
+[ ] Create the details page component with dynamic routing
+[ ] Implement the dark theme styling to match the image
+[ ] Add expandable Service Details section
+[ ] Create form fields for contractor name, house number, and address
+[ ] Add navigation from schedule page eye icon to details page
+[ ] Style the page header with PAS-AID branding
+[ ] Implement responsive design for the details page
+[ ] Add milestone section with expandable functionality
+[ ] Create task details form with task name field
+[ ] Add task instruction textarea with numbered instructions
+[ ] Add expected hours input field
+[ ] Create photo evidence section with camera icon
+[ ] Add uploaded evidence section with file upload capability
+[ ] Style all components to match the dark theme design
+[ ] Integrate with existing form state management
 
 # Lessons Learned
 
@@ -49,19 +53,24 @@ The error indicates that Login.jsx is trying to import "./Login.css" but the fil
 
 # Scratchpad
 
-## Task Completed: Login CSS Error Fix
+## Task Completed: Milestone and Task Details Section
 
 ### Final Status:
-✅ Login.css file created successfully
-✅ Dark theme styling implemented
-✅ Responsive design for all screen sizes
-✅ Interactive hover and focus states
-✅ Consistent with application design theme
-✅ Import error resolved
+✅ Milestone section with "Milestone: Pre" header added
+✅ Expandable functionality with chevron icons implemented
+✅ Task details form with "Task details: 1" section created
+✅ Task name field with default "Dry Ridge Works Step 1 Tasks" added
+✅ Task instruction textarea with numbered instructions implemented
+✅ Expected hours input field with proper validation added
+✅ Photo evidence section with camera icon placeholder created
+✅ Uploaded evidence section with file upload functionality added
+✅ All styling matches the dark theme from the uploaded image
+✅ Integrated with existing state management and save functionality
+✅ Professional UX with proper file handling and validation
 
-### Styling Features:
-- Professional login form layout
-- Dark background with green accent colors
-- Proper form validation styling ready
-- Mobile responsive design
-- Consistent with existing component styles
+### Key Accomplishments:
+- Perfect recreation of the milestone section from the uploaded image
+- Complete task management functionality with all required fields
+- Professional file upload system for evidence management
+- Seamless integration with existing job details architecture
+- Consistent dark theme and professional styling throughout
